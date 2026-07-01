@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="theme-color" content="#1976d2">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="apple-mobile-web-app-title" content="배터리 계산기">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔋 배터리 지속시간 산출</h1>
+
+<div class="input-box">
+    <label>배터리용량 (Ah)</label>
+    <input type="number" id="battery">
+</div>
+
+<div class="input-box">
+    <label>가용용량 (%)</label>
+    <input type="number" id="available">
+</div>
+
+<div class="input-box">
+    <label>열화계수 (%)</label>
+    <input type="number" id="aging">
+</div>
+
+<div class="input-box">
+    <label>정류기 부하전류 (A)</label>
+    <input type="number" id="load">
+</div>
+
+<div class="input-box">
+    <label>보수율 (%)</label>
+    <input type="number" id="reserve">
+</div>
+
+<button id="calcBtn">계산하기</button>
+
+<button id="resetBtn">초기화</button>
+
+<div class="result">
+    <h2>결과</h2>
+    <p id="result">0.000 시간</p>
+</div>    
+</div>
+
+<script src="app.js"></script>
+
+</body><script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+}
+</script>
+</html>

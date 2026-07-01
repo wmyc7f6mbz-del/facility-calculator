@@ -1,0 +1,99 @@
+/* 전체 화면 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Malgun Gothic", Arial, sans-serif;
+    background: #f3f6fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 계산기 박스 */
+.container {
+    width: 400px;
+    max-width: 95%;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* 입력 */
+.input-box {
+    margin-bottom: 18px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* 버튼 */
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: 0.2s;
+}
+
+#calcBtn {
+    background: #007AFF;
+    color: white;
+}
+
+#calcBtn:hover {
+    background: #005ecb;
+}
+
+#resetBtn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+#resetBtn:hover {
+    background: #cfcfcf;
+}
+
+/* 결과 */
+.result {
+    margin-top: 25px;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.result h2 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+#result {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007AFF;
+}
