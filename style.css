@@ -1,4 +1,5 @@
-/* 전체 화면 */
+/* ===== 기본 설정 ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,94 +7,397 @@
 }
 
 body {
-    font-family: "Malgun Gothic", Arial, sans-serif;
-    background: #f3f6fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+
+    background: #eef3f8;
+
+    color: #222;
+
+    transition: .3s;
+
     min-height: 100vh;
+
+    padding: 30px;
+
 }
 
-/* 계산기 박스 */
+
+/* ===== 컨테이너 ===== */
+
 .container {
-    width: 400px;
-    max-width: 95%;
-    background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    max-width: 700px;
+
+    margin: auto;
+
 }
 
-h1 {
+
+/* ===== 헤더 ===== */
+
+header {
+
     text-align: center;
-    margin-bottom: 25px;
-    color: #2c3e50;
+
+    margin-bottom: 30px;
+
 }
 
-/* 입력 */
-.input-box {
-    margin-bottom: 18px;
-}
+.logo {
 
-.input-box label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
+    font-size: 70px;
 
-.input-box input {
-    width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-/* 버튼 */
-button {
-    width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: 0.2s;
-}
-
-#calcBtn {
-    background: #007AFF;
-    color: white;
-}
-
-#calcBtn:hover {
-    background: #005ecb;
-}
-
-#resetBtn {
-    background: #e0e0e0;
-    color: #333;
-}
-
-#resetBtn:hover {
-    background: #cfcfcf;
-}
-
-/* 결과 */
-.result {
-    margin-top: 25px;
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-}
-
-.result h2 {
     margin-bottom: 10px;
-    color: #444;
+
 }
 
-#result {
-    font-size: 28px;
-    font-weight: bold;
-    color: #007AFF;
+header h1 {
+
+    font-size: 32px;
+
+    color: #2563EB;
+
+    margin-bottom: 6px;
+
+}
+
+header p {
+
+    color: gray;
+
+}
+
+
+/* ===== 카드 ===== */
+
+.card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    margin-bottom:20px;
+
+    color:#2563EB;
+
+}
+
+
+/* ===== 입력 ===== */
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:2px solid #ddd;
+
+    font-size:17px;
+
+    transition:.25s;
+
+}
+
+.input-group input:focus{
+
+    outline:none;
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 10px rgba(37,99,235,.25);
+
+}
+
+
+/* ===== 버튼 ===== */
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:16px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#calculateBtn{
+
+    background:#2563EB;
+
+    color:white;
+
+    margin-top:10px;
+
+}
+
+#calculateBtn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+#calculateBtn:active{
+
+    transform:scale(.98);
+
+}
+
+#copyBtn{
+
+    margin-top:20px;
+
+    background:#10b981;
+
+    color:white;
+
+}
+
+#copyBtn:hover{
+
+    background:#059669;
+
+}
+
+
+/* ===== 결과 ===== */
+
+.result-card{
+
+    text-align:center;
+
+}
+
+#result{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#2563EB;
+
+    line-height:1.8;
+
+    margin-top:15px;
+
+    min-height:70px;
+
+}
+
+
+/* ===== 설정 ===== */
+
+.setting{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+/* ===== 스위치 ===== */
+
+.switch{
+
+    position:relative;
+
+    width:58px;
+
+    height:30px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#ccc;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    left:3px;
+
+    top:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:#2563EB;
+
+}
+
+.switch input:checked + .slider::before{
+
+    transform:translateX(28px);
+
+}
+
+
+/* ===== 다크모드 ===== */
+
+body.dark{
+
+    background:#121212;
+
+    color:white;
+
+}
+
+body.dark .card{
+
+    background:#1f1f1f;
+
+    color:white;
+
+}
+
+body.dark header p{
+
+    color:#bbb;
+
+}
+
+body.dark input{
+
+    background:#2d2d2d;
+
+    color:white;
+
+    border-color:#444;
+
+}
+
+body.dark input:focus{
+
+    border-color:#4f8cff;
+
+}
+
+body.dark #result{
+
+    color:#7fb3ff;
+
+}
+
+
+/* ===== 모바일 ===== */
+
+@media(max-width:600px){
+
+body{
+
+    padding:15px;
+
+}
+
+.card{
+
+    padding:18px;
+
+}
+
+header h1{
+
+    font-size:25px;
+
+}
+
+.logo{
+
+    font-size:55px;
+
+}
+
+button{
+
+    font-size:16px;
+
+}
+
+#result{
+
+    font-size:22px;
+
+}
+
 }
