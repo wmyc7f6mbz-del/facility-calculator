@@ -183,3 +183,179 @@ document.querySelectorAll("input[type='number']").forEach(input=>{
 // ===============================
 
 loadData();
+const infoData = {
+
+    capacity: {
+
+        title: "배터리 정격용량(Ah)",
+
+        text:
+`배터리가 규정된 조건에서 공급할 수 있는 전류량입니다.
+
+예)
+100Ah → 10A를 약 10시간 공급
+
+배터리 라벨에
+100Ah, 200Ah 등으로 표시됩니다.`
+
+    }
+
+};
+
+const modal = document.getElementById("infoModal");
+
+const title = document.getElementById("infoTitle");
+
+const text = document.getElementById("infoText");
+
+document.querySelectorAll(".info-btn").forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        const data = infoData[btn.dataset.info];
+
+        title.textContent = data.title;
+
+        text.textContent = data.text;
+
+        modal.classList.add("show");
+
+    });
+
+});
+
+document.getElementById("closeInfo")
+.addEventListener("click",()=>{
+
+    modal.classList.remove("show");
+
+});
+/* =====================================================
+   V1.3 Smart Help
+===================================================== */
+
+const infoData = {
+
+    capacity: {
+        title: "🔋 배터리 정격용량 (Ah)",
+        text: `배터리가 규정된 방전 조건에서 공급할 수 있는 전류의 양입니다.
+
+예시
+• 100Ah → 10A를 약 10시간 공급
+• 200Ah → 20A를 약 10시간 공급
+
+TIP
+배터리 측면 라벨에 표시된 Ah 값을 입력하세요.`
+    },
+
+    efficiency: {
+        title: "⚡ 가용효율 (%)",
+        text: `배터리 정격용량 중 실제 사용할 수 있는 비율입니다.
+
+일반 권장값
+• VGS : 80%
+• AGM : 85%
+• GEL : 90%
+
+TIP
+UPS에서는 일반적으로 80%를 많이 사용합니다.`
+    },
+
+    aging: {
+        title: "📉 열화계수 (%)",
+        text: `배터리 노후화에 따른 성능 감소를 반영하는 값입니다.
+
+예시
+• 새 배터리 : 100%
+• 사용 중 : 90%
+• 노후 : 80%
+
+TIP
+배터리 성능시험 결과를 적용하면 가장 정확합니다.`
+    },
+
+    load: {
+        title: "🔌 부하 (W)",
+        text: `UPS가 실제 공급하는 소비전력입니다.
+
+예시
+• 서버 : 250W
+• 스위치 : 80W
+• 모니터 : 80W
+
+총 부하 = 410W
+
+TIP
+UPS 용량(kVA)이 아니라 실제 소비전력(W)을 입력하세요.`
+    },
+
+    reserve: {
+        title: "🛡 보수율 (%)",
+        text: `설계 여유를 위한 안전계수입니다.
+
+일반적으로
+• 100%
+• 110%
+
+을 많이 사용합니다.
+
+TIP
+시설관리에서는 110%를 적용하는 경우가 많습니다.`
+    }
+
+};
+
+
+/* ============================= */
+
+const infoModal = document.getElementById("infoModal");
+const infoTitle = document.getElementById("infoTitle");
+const infoText = document.getElementById("infoText");
+const closeInfo = document.getElementById("closeInfo");
+
+document.querySelectorAll(".info-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const data = infoData[button.dataset.info];
+
+        infoTitle.textContent = data.title;
+        infoText.innerText = data.text;
+
+        infoModal.classList.add("show");
+
+    });
+
+});
+
+closeInfo.addEventListener("click", () => {
+
+    infoModal.classList.remove("show");
+
+});
+
+
+/* 모달 바깥 클릭 시 닫기 */
+
+infoModal.addEventListener("click", (e) => {
+
+    if(e.target === infoModal){
+
+        infoModal.classList.remove("show");
+
+    }
+
+});
+
+
+/* ESC 키로 닫기 */
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        infoModal.classList.remove("show");
+
+    }
+
+});
