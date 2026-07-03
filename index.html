@@ -2,171 +2,266 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Facility Calculator Pro</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#2563EB">
+<meta name="theme-color"
+      content="#1565C0">
 
-    <link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable"
+      content="yes">
 
-    <link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-status-bar-style"
+      content="default">
 
-    <meta name="apple-mobile-web-app-capable"
-          content="yes">
+<meta name="apple-mobile-web-app-title"
+      content="Facility Calculator">
 
-    <meta name="apple-mobile-web-app-status-bar-style"
-          content="default">
+<title>Facility Calculator Pro</title>
 
-    <meta name="apple-mobile-web-app-title"
-          content="Facility Calculator">
+<link rel="manifest"
+      href="manifest.json">
 
-    <link rel="stylesheet"
-          href="style.css">
+<link rel="stylesheet"
+      href="style.css">
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- 헤더 -->
+<header>
 
-    <header>
+<div class="logo">
 
-        <div class="logo">
-
-            🔋
-
-        </div>
-
-        <h1>Facility Calculator Pro</h1>
-
-        <p>UPS Battery Runtime Calculator</p>
-
-    </header>
-
-
-
-    <!-- 입력 카드 -->
-
-    <section class="card">
-
-        <h2>입력값</h2>
-
-        <div class="input-group">
-
-            <label>배터리 정격용량 (Ah)</label>
-
-            <input
-                type="number"
-                id="capacity"
-                placeholder="예 : 200">
-
-        </div>
-
-        <div class="input-group">
-
-            <label>가용효율 (%)</label>
-
-            <input
-                type="number"
-                id="efficiency"
-                placeholder="예 : 80">
-
-        </div>
-
-        <div class="input-group">
-
-            <label>열화계수 (%)</label>
-
-            <input
-                type="number"
-                id="aging"
-                placeholder="예 : 100">
-
-        </div>
-
-        <div class="input-group">
-
-            <label>부하 (W)</label>
-
-            <input
-                type="number"
-                id="load"
-                placeholder="예 : 410">
-
-        </div>
-
-        <div class="input-group">
-
-            <label>보수율 (%)</label>
-
-            <input
-                type="number"
-                id="reserve"
-                placeholder="예 : 110">
-
-        </div>
-
-        <button id="calculateBtn">
-
-            계산하기
-
-        </button>
-
-    </section>
-
-
-
-    <!-- 결과 -->
-
-    <section class="card result-card">
-
-        <h2>계산 결과</h2>
-
-        <div id="result">
-
-            계산 버튼을 눌러주세요.
-
-        </div>
-
-        <button id="copyBtn">
-
-            📋 결과 복사
-
-        </button>
-
-    </section>
-
-
-
-    <!-- 설정 -->
-
-    <section class="card">
-
-        <div class="setting">
-
-            <span>🌙 다크모드</span>
-
-            <label class="switch">
-
-                <input type="checkbox"
-                       id="darkMode">
-
-                <span class="slider"></span>
-
-            </label>
-
-        </div>
-
-    </section>
+🔋
 
 </div>
 
+<h1>Facility Calculator Pro</h1>
 
+<p>UPS Battery Runtime Calculator</p>
+
+</header>
+
+<!-- ========================= -->
+<!-- 입력 카드 -->
+<!-- ========================= -->
+
+<section class="card">
+
+<h2>입력값</h2>
+
+<div class="input-group">
+
+<label>
+
+배터리 정격용량 (Ah)
+
+<button
+class="info-btn"
+data-info="capacity">
+
+ⓘ
+
+</button>
+
+</label>
+
+<input
+type="number"
+id="capacity"
+placeholder="예 : 200">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+가용효율 (%)
+
+<button
+class="info-btn"
+data-info="efficiency">
+
+ⓘ
+
+</button>
+
+</label>
+
+<input
+type="number"
+id="efficiency"
+placeholder="예 : 80">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+열화계수 (%)
+
+<button
+class="info-btn"
+data-info="aging">
+
+ⓘ
+
+</button>
+
+</label>
+
+<input
+type="number"
+id="aging"
+placeholder="예 : 100">
+
+</div>
+<div class="input-group">
+
+<label>
+
+부하 (W)
+
+<button
+class="info-btn"
+data-info="load">
+
+ⓘ
+
+</button>
+
+</label>
+
+<input
+type="number"
+id="load"
+placeholder="예 : 410">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+보수율 (%)
+
+<button
+class="info-btn"
+data-info="reserve">
+
+ⓘ
+
+</button>
+
+</label>
+
+<input
+type="number"
+id="reserve"
+placeholder="예 : 110">
+
+</div>
+
+<button id="calculateBtn">
+
+계산하기
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- 결과 -->
+<!-- ========================= -->
+
+<section class="card result-card">
+
+<h2>계산 결과</h2>
+
+<div id="result">
+
+계산 버튼을 눌러주세요.
+
+</div>
+
+<button id="copyBtn">
+
+📋 결과 복사
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- 설정 -->
+<!-- ========================= -->
+
+<section class="card">
+
+<div class="setting">
+
+<span>🌙 다크모드</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="darkMode">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Smart Help -->
+<!-- ========================= -->
+
+<div
+id="infoModal"
+class="modal">
+
+<div class="modal-content">
+
+<h2 id="infoTitle">
+
+</h2>
+
+<div id="infoText">
+
+</div>
+
+<p class="notice">
+
+※ 본 설명은 시설관리 실무 기준의 일반적인 내용을
+바탕으로 작성되었습니다.<br>
+
+실제 설계 및 제조사 기준을 우선 적용하세요.
+
+</p>
+
+<button
+id="closeInfo">
+
+닫기
+
+</button>
+
+</div>
+
+</div>
+</div>
 
 <script src="app.js"></script>
 
@@ -174,11 +269,29 @@
 
 if ('serviceWorker' in navigator) {
 
-    navigator.serviceWorker.register('./sw.js');
+    window.addEventListener('load', () => {
+
+        navigator.serviceWorker.register('./sw.js')
+            .then(registration => {
+
+                console.log("✅ Service Worker 등록 완료");
+
+                // 새 버전이 있으면 자동 갱신
+                registration.update();
+
+            })
+            .catch(error => {
+
+                console.log("❌ Service Worker 등록 실패", error);
+
+            });
+
+    });
 
 }
 
 </script>
 
 </body>
+
 </html>
