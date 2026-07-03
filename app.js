@@ -183,53 +183,7 @@ document.querySelectorAll("input[type='number']").forEach(input=>{
 // ===============================
 
 loadData();
-const infoData = {
 
-    capacity: {
-
-        title: "배터리 정격용량(Ah)",
-
-        text:
-`배터리가 규정된 조건에서 공급할 수 있는 전류량입니다.
-
-예)
-100Ah → 10A를 약 10시간 공급
-
-배터리 라벨에
-100Ah, 200Ah 등으로 표시됩니다.`
-
-    }
-
-};
-
-const modal = document.getElementById("infoModal");
-
-const title = document.getElementById("infoTitle");
-
-const text = document.getElementById("infoText");
-
-document.querySelectorAll(".info-btn").forEach(btn=>{
-
-    btn.addEventListener("click",()=>{
-
-        const data = infoData[btn.dataset.info];
-
-        title.textContent = data.title;
-
-        text.textContent = data.text;
-
-        modal.classList.add("show");
-
-    });
-
-});
-
-document.getElementById("closeInfo")
-.addEventListener("click",()=>{
-
-    modal.classList.remove("show");
-
-});
 /* =====================================================
    V1.3 Smart Help
 ===================================================== */
