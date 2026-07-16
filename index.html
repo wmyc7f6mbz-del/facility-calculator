@@ -43,11 +43,13 @@
 </div>
 
 <h1>Battery Runtime Calculator</h1>
-
-
-
+<div class="tabs">
+<button class="tab-btn active" data-tab="battery">🔋 Battery</button>
+<button class="tab-btn" data-tab="calculator">📐 Calculator</button>
+</div>
 </header>
 
+<div id="batteryPage">
 <!-- ========================= -->
 <!-- 입력 카드 -->
 <!-- ========================= -->
@@ -259,6 +261,11 @@ id="closeInfo">
 </div>
 
 </div>
+</div>
+
+<div id="calculatorPage" style="display:none;">
+<section class="card"><h2>📐 Engineering Calculator</h2><input type="text" id="calcDisplay" readonly placeholder="0"><div class="calculator"><button>AC</button><button>(</button><button>)</button><button>/</button><button>7</button><button>8</button><button>9</button><button>*</button><button>4</button><button>5</button><button>6</button><button>-</button><button>1</button><button>2</button><button>3</button><button>+</button><button>0</button><button>.</button><button>=</button><button>C</button><button>√</button><button>x²</button><button>π</button><button>%</button></div></section></div>
+
 </div>
 
 <script src="app.js"></script>
