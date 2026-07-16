@@ -310,3 +310,132 @@ document.addEventListener("keydown",(e)=>{
     }
 
 });
+/* =====================================================
+   V2.0 Engineering Calculator
+===================================================== */
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+
+const batteryPage = document.getElementById("batteryPage");
+const calculatorPage = document.getElementById("calculatorPage");
+
+tabButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        if(button.dataset.tab === "battery"){
+
+            batteryPage.style.display = "block";
+            calculatorPage.style.display = "none";
+
+        }else{
+
+            batteryPage.style.display = "none";
+            calculatorPage.style.display = "block";
+
+        }
+
+    });
+
+});
+
+
+/* ==============================
+   Calculator
+============================== */
+
+const display = document.getElementById("calcDisplay");
+
+const calcButtons = document.querySelectorAll(".calculator button");
+
+let expression = "";
+
+calcButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const value = btn.innerText;
+
+        switch(value){
+
+            case "AC":
+
+                expression = "";
+
+                display.value = "";
+
+                break;
+
+            case "=":
+
+                try{
+
+                    expression = eval(expression).toString();
+
+                    display.value = expression;
+
+                }catch{
+
+                    display.value = "Error";
+
+                    expression = "";
+
+                }
+
+                break;
+
+            case "π":
+
+                expression += Math.PI;
+
+                display.value = expression;
+
+                break;
+
+            case "√":
+
+                expression = `Math.sqrt(${expression})`;
+
+                display.value = "√(" + display.value + ")";
+
+                break;
+
+            case "x²":
+
+                expression = `(${expression})**2`;
+
+                display.value = display.value + "²";
+
+                break;
+
+            case "%":
+
+                expression += "/100";
+
+                display.value += "%";
+
+                break;
+
+            case "C":
+
+                expression = expression.slice(0,-1);
+
+                display.value = expression;
+
+                break;
+
+            default:
+
+                expression += value;
+
+                display.value = expression;
+
+        }
+
+    });
+
+});
